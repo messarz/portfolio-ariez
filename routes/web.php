@@ -14,11 +14,11 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.welcome');
+})->name('welcome');
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('pages.contact');
  
 })->name('contact');
 
@@ -28,3 +28,7 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 
 
 // Route::get('/contact2', 'App\Http\Controllers\MainController@contact')->name('contact2');
+
+Route::get('/main', function () {
+    return view('pages.index');
+})->name('main');
