@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,14 @@ Route::get('/contact', function () {
 Route::get('/contact2', [MainController::class, 'contact'])->name('contact2');
 
 Route::get('/about', [MainController::class, 'about'])->name('about');
+
+Route::get('/blog', [PostController::class, 'index'])->name('blog');
+
+//create new post
+Route::post('/blog-post', [PostController::class, 'store'])->name('blog.create');
+
+//delet post
+Route::get('/blog-delete/{id}', [PostController::class, 'delete'])->name('blog.delete');
 
 
 // Route::get('/contact2', 'App\Http\Controllers\MainController@contact')->name('contact2');

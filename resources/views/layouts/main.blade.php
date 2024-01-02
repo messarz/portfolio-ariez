@@ -7,10 +7,10 @@
 
 <body class="flex flex-col min-h-screen">
     <div class="container">
-        <header>
+        {{-- <header>
             @include('includes.main.header')
-        </header>
-        <div id="main" class="row">
+        </header> --}}
+        <div>
             @yield('content')
         </div>
     </div>
